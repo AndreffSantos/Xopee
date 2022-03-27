@@ -1,3 +1,7 @@
+:root {
+  --primary: #036b52;
+  --secondary: white;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,16 +16,38 @@ code {
     monospace;
 }
 
-header {
-  background-color: #036b52;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--primary);
   height: auto;
 }
 
+header .logo {
+  color: var(--secondary);
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+}
+
+header a:-webkit-any-link {
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: larger;
+  align-self: center;
+}
+
+header .logo-icon {
+  align-self: center;
+  font-size: 40px;
+}
+
 .search-bar {
+  width: 80%;
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-gap: 10px;
-  background-color: #036b52;
   padding: 10px;
 }
 
@@ -41,11 +67,30 @@ header {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   text-align: center;
 }
 
 .product-card {
   border: solid 1px black;
+}
+
+.btn-cart {
+  color: var(--secondary);
+  font-size: 40px !important;
+  padding-right: 20px;
+}
+
+.cart-container {
+  text-align: center;
+}
+
+.container-detail {
+  padding: 50px;
+}
+
+.container-detail2 {
+  display: grid;
+  grid-template-columns: auto 1fr;
 }

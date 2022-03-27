@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/header";
-import SearchBar from "../components/searchbar";
 import ProductCard from "../components/productcard";
 import { getProductsFromCategoryAndQuery } from "../services/fetchApi";
 
@@ -43,13 +42,14 @@ class Homepage extends React.Component {
 
   render() {
     const { productList, inputName } = this.state;
+    const { match } = this.props;
     return (
       <>
-      <Header />
-        <SearchBar
+        <Header
+          url={ match.url }
           change={ this.handleChange }
           click={ this.handleClick }
-          input={inputName}
+          input={inputName}      
         />
         <main>
           { productList.map(({ id, ...rest }) => (
